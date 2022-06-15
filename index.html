@@ -56,12 +56,16 @@
     <!---------- H E R O -------- ефективне - рішення --------->
     <main>
       <section class="section hero overlay">
-        <!-- <div class="overlay"> -->
         <div class="conteiner">
           <h1 class="hero-text">Эффективные решения для вашего бизнеса</h1>
-          <button type="button" class="button-zakaz">Заказать услугу</button>
+          <button type="button" class="button-zakaz" data-modal-open>Заказать услугу</button>
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+              <p>modal window</p>
+              <button data-modal-close>Закрыть</button>
+            </div>
+          </div>
         </div>
-        <!-- </div> -->
       </section>
       <!---------------- особливості ------------------->
       <section class="section special">
@@ -102,18 +106,21 @@
           <ul class="chem-list list">
             <li class="chem-item">
               <a href="" class="working1"
-                ><img src="./images/img1.jpg" alt="work with comp" width="370"
-              /></a>
+                ><img src="./images/img1.jpg" alt="work with comp" width="370" />
+              </a>
+              <p class="chem-subtext">ДЕСКТОПНЫЕ ПРИЛОЖЕНИЯ</p>
             </li>
             <li class="chem-item">
               <a href="" class="working2"
                 ><img src="./images/img2.jpg" alt="work with phone" width="370"
               /></a>
+              <p class="chem-subtext">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</p>
             </li>
             <li class="chem-item">
               <a href="" class="working3"
                 ><img src="./images/img3.jpg" alt="work with tablet" width="370"
               /></a>
+              <p class="chem-subtext">ДИЗАЙНЕРСКИЕ РЕШЕНИЯ</p>
             </li>
           </ul>
         </div>
@@ -398,5 +405,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

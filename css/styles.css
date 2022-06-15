@@ -19,7 +19,8 @@
     border-color: #eeeeee;
     footerbackground-color: #2f303a;
     footer-text: rgba(255, 255, 255, 0.6);
-    footer-text-color: #ffffff; */
+    footer-text-color: #ffffff; 
+    modal-bcg: rgba(0, 0, 0, 0.2);*/
 
 :root {
   --primary-text-color: #212121;
@@ -55,6 +56,10 @@
   --icon-text: #afb1b8;
   --icon-bgound-footer: rgba(255, 255, 255, 0.1);
   --post-client-border-color: #afb1b8;
+  --modal-bcg: rgba(0, 0, 0, 0.2);
+  --modal-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  --bcg-chem-subtext: rgba(47, 48, 58, 0.8);
 }
 /* html {
   box-sizing: border-box;
@@ -156,6 +161,20 @@ body {
 }
 .headerlink.current {
   color: var(--accent-color);
+}
+.header-item {
+  position: relative;
+}
+.current::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 28px;
+  border-radius: 2px;
+
+  background-color: var(--accent-color);
 }
 .headerlink:hover,
 .headerlink:focus {
@@ -360,6 +379,34 @@ body {
   color: var(--accent-color-text);
   background-color: var(--background-buttom-zakaz-hover);
 }
+/* ------------- модальне вікно ------------ */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  background-color: var(--modal-bcg);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  border-radius: 4px;
+
+  background-color: var(--background-color);
+  box-shadow: var(--modal-box-shadow);
+}
 
 /*----------------- особливості ----------------*/
 .title-list {
@@ -429,6 +476,23 @@ body {
 }
 .chem-list .chem-item + .chem-item {
   margin-left: 30px;
+}
+.chem-item {
+  position: relative;
+}
+.chem-subtext {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 28px 0;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: var(--accent-color-text);
+  background: var(--bcg-chem-subtext);
 }
 
 /*------------- наша команда ----------*/
