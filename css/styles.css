@@ -98,6 +98,7 @@ address {
 }
 
 body {
+  padding-top: 80px;
   color: var(--primary-text-color);
   background: var(--background-color);
   font-family: 'Roboto', sans-serif;
@@ -122,6 +123,13 @@ body {
   /* background-color: orange; */
 }
 /* ------------- логотип WebStudio -------------*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 .header-navig {
   display: flex;
 }
@@ -477,7 +485,7 @@ body {
 .chem-list .chem-item + .chem-item {
   margin-left: 30px;
 }
-.chem-item {
+.chem-thumb {
   position: relative;
 }
 .chem-subtext {
