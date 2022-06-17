@@ -60,8 +60,8 @@
   --modal-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --bcg-chem-subtext: rgba(47, 48, 58, 0.8);
-  --cubic-bezier: (0.4, 0, 0.2, 1);
   --project-bgc-overlay: rgba(33, 150, 243, 0.9);
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* html {
   box-sizing: border-box;
@@ -170,7 +170,7 @@ body {
   color: var(--primary-text-color);
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: var(--cubic);
 }
 .headerlink.current {
   color: var(--accent-color);
@@ -218,7 +218,7 @@ body {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: var(--cubic);
 }
 .header-icon {
   margin-right: 10px;
@@ -267,7 +267,7 @@ body {
 
   transition-property: color, background-color, box-shadow;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: var(--cubic);
 }
 .buttons:hover,
 .buttons:focus {
@@ -420,7 +420,7 @@ body {
 
   transition-property: background-color, box-shadow;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: var(--cubic);
 }
 .button-zakaz:hover,
 .button-zakaz:focus {
@@ -437,7 +437,7 @@ body {
   z-index: 1;
 
   background-color: var(--modal-bcg);
-  transition: opacity 250ms linear, visibility 250ms linear;
+  transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -452,7 +452,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1) rotate(0);
-  transition: transform 250ms linear;
+  transition: transform 250ms var(--cubic);
   min-width: 528px;
   min-height: 581px;
   border-radius: 4px;
@@ -640,7 +640,7 @@ body {
 
   transition-property: color, background-color;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: var(--cubic);
 }
 .soc-icon {
   fill: currentColor;
@@ -698,7 +698,7 @@ body {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: var(--cubic);
 }
 .client-icon {
   fill: currentColor;
@@ -775,7 +775,7 @@ body {
 
   transition-property: color, background-color;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: var(--cubic);
 }
 .footer-soc-icon {
   fill: currentColor;
