@@ -467,9 +467,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   width: 30px;
   height: 30px;
-  cursor: pointer;
+  border-radius: 50%;
   background: var(--background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
