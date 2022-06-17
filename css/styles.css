@@ -60,6 +60,8 @@
   --modal-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --bcg-chem-subtext: rgba(47, 48, 58, 0.8);
+  --cubic-bezier: (0.4, 0, 0.2, 1);
+  --project-bgc-overlay: rgba(33, 150, 243, 0.9);
 }
 /* html {
   box-sizing: border-box;
@@ -166,20 +168,24 @@ body {
   letter-spacing: 0.02em;
 
   color: var(--primary-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 .headerlink.current {
   color: var(--accent-color);
 }
-.header-item {
+.headerlink {
   position: relative;
 }
-.current::after {
+.headerlink.current::after {
   content: '';
   position: absolute;
   display: block;
   width: 100%;
   height: 4px;
-  margin-top: 28px;
+  left: 0;
+  bottom: 0;
   border-radius: 2px;
 
   background-color: var(--accent-color);
@@ -209,6 +215,10 @@ body {
   letter-spacing: 0.02em;
 
   color: var(--second-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 .header-icon {
   margin-right: 10px;
@@ -252,7 +262,12 @@ body {
   line-height: 1.62;
   cursor: pointer;
   border: 0px solid transparent;
+
   color: var(--primary-text-color);
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 .buttons:hover,
 .buttons:focus {
@@ -288,6 +303,27 @@ body {
 .box-cards .link:focus {
   box-shadow: var(--box-shadow-card-project);
 }
+.project-thunb {
+  position: relative;
+  overflow: hidden;
+}
+.box-cards:hover .project-subtext {
+  transform: translateY(0);
+}
+.project-subtext {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.56;
+  padding: 63px 24px;
+
+  color: var(--accent-color-text);
+  background: var(--project-bgc-overlay);
+  transform: translateY(100%);
+  transition: transform 250ms linear;
+}
+
 /*------- або ---- PROJECT - SITKA ----- по-іншому --------*/
 /* .project {
   display: flex;
@@ -380,7 +416,11 @@ body {
   box-shadow: var(--box-shadow-buttom-studio);
   border-radius: 4px;
   color: var(--accent-color-text);
-  background: var(--background-buttom-accent);
+  background-color: var(--background-buttom-accent);
+
+  transition-property: background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 .button-zakaz:hover,
 .button-zakaz:focus {
@@ -397,17 +437,22 @@ body {
   z-index: 1;
 
   background-color: var(--modal-bcg);
+  transition: opacity 250ms linear, visibility 250ms linear;
 }
 .backdrop.is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0) rotate(360deg);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transition: transform 250ms linear;
   min-width: 528px;
   min-height: 581px;
   border-radius: 4px;
@@ -415,7 +460,19 @@ body {
   background-color: var(--background-color);
   box-shadow: var(--modal-box-shadow);
 }
-
+.btn-modal-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: var(--background-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
 /*----------------- особливості ----------------*/
 .title-list {
   display: flex;
@@ -579,6 +636,10 @@ body {
   border-radius: 50%;
   background-color: var(--accent-color-text);
   color: var(--icon-text);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 .soc-icon {
   fill: currentColor;
@@ -633,6 +694,10 @@ body {
   border: 1px solid var(--post-client-border-color);
   border-radius: 4px;
   color: var(--icon-text);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 .client-icon {
   fill: currentColor;
@@ -703,8 +768,13 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+
   background-color: var(--icon-bgound-footer);
   color: var(--accent-color-text);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 .footer-soc-icon {
   fill: currentColor;
