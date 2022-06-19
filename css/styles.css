@@ -185,7 +185,7 @@ body {
   width: 100%;
   height: 4px;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   border-radius: 2px;
 
   background-color: var(--accent-color);
@@ -246,9 +246,11 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.filter-item:not(:last-child) {
+  margin-right: 8px;
+}
 .filter {
   display: flex;
-  margin-right: 8px;
   margin-bottom: 50px;
   border-radius: 4px;
   justify-content: center;
@@ -298,6 +300,10 @@ body {
 }
 .box-cards .link {
   display: block;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .box-cards .link:hover,
 .box-cards .link:focus {
@@ -307,7 +313,8 @@ body {
   position: relative;
   overflow: hidden;
 }
-.box-cards:hover .project-subtext {
+.box-cards:hover .project-subtext,
+.box-cards:focus .project-subtext {
   transform: translateY(0);
 }
 .project-subtext {
@@ -320,7 +327,7 @@ body {
 
   color: var(--accent-color-text);
   background: var(--project-bgc-overlay);
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform 250ms linear;
 }
 
@@ -451,14 +458,16 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1) rotate(0);
-  transition: transform 250ms var(--cubic);
+
   min-width: 528px;
   min-height: 581px;
   border-radius: 4px;
 
   background-color: var(--background-color);
   box-shadow: var(--modal-box-shadow);
+
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transition: transform 250ms var(--cubic);
 }
 .btn-modal-close {
   position: absolute;
@@ -547,15 +556,16 @@ body {
   position: relative;
 }
 .chem-subtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 28px 0;
-
+  height: 70px;
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
-  text-align: center;
 
   color: var(--accent-color-text);
   background: var(--bcg-chem-subtext);
@@ -696,7 +706,7 @@ body {
   border-radius: 4px;
   color: var(--icon-text);
 
-  transition-property: color;
+  transition-property: color, border;
   transition-duration: 250ms;
   transition-timing-function: var(--cubic);
 }
@@ -710,6 +720,7 @@ body {
 }
 /*--------------- підвал ------------*/
 .footer {
+  padding: 60px 0;
   background: var(--footerbackground-color);
 }
 .footer .conteiner {
@@ -739,6 +750,10 @@ body {
 .footer-streat {
   line-height: 1.71;
   color: var(--footer-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .footer-item > a:hover,
 .footer-item > a:focus {
@@ -749,6 +764,10 @@ body {
   letter-spacing: 0.03em;
   color: var(--footer-text);
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .footer-soc {
   display: flex;
@@ -773,7 +792,7 @@ body {
   background-color: var(--icon-bgound-footer);
   color: var(--accent-color-text);
 
-  transition-property: color, background-color;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: var(--cubic);
 }
@@ -783,9 +802,6 @@ body {
 .footer-soc-link:hover,
 .footer-soc-link:focus {
   background-color: var(--accent-color);
-}
-.footer-primery {
-  padding: 60px 0;
 }
 .footer-secondary {
   margin-left: 70px;
