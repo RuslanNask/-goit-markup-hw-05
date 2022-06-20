@@ -324,6 +324,7 @@ body {
   font-size: 18px;
   line-height: 1.56;
   padding: 63px 24px;
+  overflow: auto;
 
   color: var(--accent-color-text);
   background: var(--project-bgc-overlay);
@@ -810,8 +811,47 @@ body {
   display: block;
   margin-bottom: 20px;
   line-height: 1.14;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
 
   color: var(--accent-color-text);
+}
+.footer-secondary-input {
+  margin-left: 93px;
+}
+.input-text {
+  font-weight: 700;
+  line-height: 1.14;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: var(--accent-color-text);
+}
+.button-input {
+  position: relative;
+  display: inline-flex;
+  min-width: 200px;
+  height: 50px;
+  padding: 10px 0 10px 29px;
+  border: 0px solid transparent;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+
+  box-shadow: var(--box-shadow-buttom-studio);
+  border-radius: 4px;
+  color: var(--accent-color-text);
+  background-color: var(--background-buttom-accent);
+
+  transition-property: background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
+}
+.icon-send {
+  position: absolute;
+  top: 13px;
+  right: 28px;
 }
